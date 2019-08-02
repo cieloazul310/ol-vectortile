@@ -15,14 +15,14 @@ export default function vtStyle(feature: RenderFeature, resolution: number) {
   } else if (properties.layer === 'coastline') {
     return new Style({
       stroke: new Stroke({
-        color: '#1aa4bd',
+        color: '#1e7180',
       }),
     });
   }
 
   return new Style({
     fill: new Fill({
-      color: '#1aa4bd',
+      color: '#1e7180',
     }),
   });
 }
