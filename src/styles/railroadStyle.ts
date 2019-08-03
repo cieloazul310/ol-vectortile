@@ -2,23 +2,22 @@ import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
 import RenderFeature from 'ol/render/Feature';
 
-export default function railroadStyle(feature: RenderFeature) {
-  console.log(feature.getProperties());
+export default function railroadStyle(feature: RenderFeature, resolution: number) {
   const { railState, snglDbl, rtCode10 } = feature.getProperties();
   if (snglDbl === 0) return new Style();
   if (snglDbl === 4) {
     return new Style({
       stroke: new Stroke({
         width: 4,
-        color: '#9900b9',
+        color: '#666',
       }),
       zIndex: 10,
     });
   } else {
-    if (rtCode10 === '2') console.log('ｼﾝｶﾝｾﾝ');
     const width =
+      resolution > 50 ? 1 :
       rtCode10 === '2' ? 4 : snglDbl === 1 ? 2 : snglDbl === 2 ? 3 : 1;
-    const color = rtCode10 === '2' ? '#4200ff' : '#4200b9';
+    const color = rtCode10 === '2' ? '#666' : '#666';
     return new Style({
       stroke: new Stroke({
         width,
@@ -27,12 +26,4 @@ export default function railroadStyle(feature: RenderFeature) {
       zIndex: 8,
     });
   }
-  /*
-  return new Style({
-      stroke: new Stroke({
-        width,
-        color
-      }),
-    });
-    */
 }

@@ -2,6 +2,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import { fromLonLat } from 'ol/proj';
 import vt from './layers/vt';
+//import population from './layers/population';
 
 import { parseHash, setPermalink, setPopstate } from './utils/handleHash';
 
