@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch webpack --config webpack.dev.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "format": "prettier --parser typescript --write \"src/**/*.ts*\""
+    "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/ol": "^5.3.3",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "css-loader": "^3.1.0",
+    "gh-pages": "2.0",
     "prettier": "1.18.2",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",

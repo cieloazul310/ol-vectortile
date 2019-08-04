@@ -9,19 +9,25 @@ https://github.com/gsi-cyberjapan/gsimaps-vector-experiment
 
 ## デモ
 
-https://cieloazul310.github.io/figure/ol-vectortile-example3/
+https://cieloazul310.github.io/ol-vectortile/
 
 ## 開発
 
 ```shell
 $ git clone git@github.com:cieloazul310/ol-vectortile.git
 $ yarn install
+
 # develop
 $ yarn run start
+
 # build
 $ yarn run build
+
 # format with prettier
 $ yarn run format
+
+# deploy to gh-pages
+$ yarn run deploy
 ```
 
 ## ギャラリー
