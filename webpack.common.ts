@@ -1,6 +1,7 @@
-const path = require('path');
+import * as path from 'path';
+import { Configuration } from 'webpack';
 
-module.exports = {
+const config: Configuration = {
   entry: './src/index.ts',
   module: {
     rules: [
@@ -26,3 +27,5 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   }
 };
+
+export default config;
