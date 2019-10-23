@@ -25,7 +25,6 @@ const vt = new VectorTileLayer({
     attributions: [
       '<a href="https://github.com/gsi-cyberjapan/gsimaps-vector-experiment" target="_blank" rel=”noopener noreferrer”>国土地理院</a>',
     ],
-    //cacheSize: window.innerWidth < 600 ? 8 : 32,
   }),
   declutter: true,
   style: vtstyle,
