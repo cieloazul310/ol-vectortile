@@ -2,9 +2,12 @@ import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
 import RenderFeature from 'ol/render/Feature';
 
-export default function railroadStyle(feature: RenderFeature, resolution: number) {
+export default function railroadStyle(
+  feature: RenderFeature,
+  resolution: number
+) {
   const { railState, snglDbl, rtCode10 } = feature.getProperties();
-  if (snglDbl === 0) return new Style();
+  if (snglDbl === 0) return null;
   if (snglDbl === 4) {
     return new Style({
       stroke: new Stroke({
@@ -15,8 +18,15 @@ export default function railroadStyle(feature: RenderFeature, resolution: number
     });
   } else {
     const width =
-      resolution > 50 ? 1 :
-      rtCode10 === '2' ? 4 : snglDbl === 1 ? 2 : snglDbl === 2 ? 3 : 1;
+      resolution > 50
+        ? 1
+        : rtCode10 === '2'
+        ? 4
+        : snglDbl === 1
+        ? 2
+        : snglDbl === 2
+        ? 3
+        : 1;
     const color = rtCode10 === '2' ? '#666' : '#666';
     return new Style({
       stroke: new Stroke({

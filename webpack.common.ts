@@ -1,7 +1,6 @@
 import * as path from 'path';
-import { Configuration } from 'webpack';
 
-const config: Configuration = {
+const config = {
   entry: './src/index.ts',
   module: {
     rules: [

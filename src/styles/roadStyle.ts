@@ -5,8 +5,9 @@ import RenderFeature from 'ol/render/Feature';
 export default function roadStyle(feature: RenderFeature, resolution: number) {
   const { rnkWidth, rdCtg } = feature.getProperties();
   const width =
-    resolution > 50 ? 1 : 
-    rnkWidth === 0
+    resolution > 50
+      ? 1
+      : rnkWidth === 0
       ? 0.5
       : rnkWidth === 1
       ? 1
