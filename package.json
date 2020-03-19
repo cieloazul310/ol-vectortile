@@ -11,9 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@types/ol": "^5.3.5",
-    "ol": "^6.2.0",
-    "package.json": "^2.0.1"
+    "@types/ol": "^6.1.0",
+    "ol": "^6.2.1"
   },
   "devDependencies": {
     "@types/node": "^12.6.9",
