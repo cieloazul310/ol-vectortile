@@ -5,11 +5,11 @@
 [国土地理院が提供実験を開始したバイナリベクトルタイル](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment "地理院地図Vector（仮称）提供実験のソース")を OpenLayers で表示したプロジェクトの作成例です。
 
 地理院地図Vector（仮称）提供実験のソース  
-https://github.com/gsi-cyberjapan/gsimaps-vector-experiment
+<https://github.com/gsi-cyberjapan/gsimaps-vector-experiment>
 
 ## デモ
 
-https://cieloazul310.github.io/ol-vectortile/
+<https://cieloazul310.github.io/ol-vectortile/>
 
 ## 開発
 

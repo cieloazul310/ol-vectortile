@@ -47,7 +47,7 @@ export function setPermalink(map: Map) {
 }
 
 export function setPopstate(map: Map, window: Window) {
-  window.addEventListener('popstate', event => {
+  window.addEventListener('popstate', (event) => {
     if (event.state === null) {
       return;
     }
