@@ -30,6 +30,7 @@ export default function labelStyle(feature: FeatureLike): Style | Style[] {
   return new Style({
     text: new Text({
       text: properties.knj,
+      font: 'bold small sans-serif',
       fill: new Fill({ color: '#777' }),
       stroke: new Stroke({ color: '#fff', width: 2 }),
       textAlign: pos[0],
