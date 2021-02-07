@@ -1,22 +1,22 @@
-import * as merge from 'webpack-merge';
+/* eslint @typescript-eslint/no-var-requires: off */
+import WebpackMerge from 'webpack-merge';
 import common from './webpack.common';
+const ESlintPlugin = require('eslint-webpack-plugin');
+// import ESlintPlugin from 'eslint-webpack-plugin';
+// import ESlintWebpackPlugin = require('eslint-webpack-plugin');
+// const ESlintPlugin = ESlintWebpackPlugin.default;
 
-const config = merge(common, {
+const config = WebpackMerge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist/',
   },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-    ],
-  },
+  plugins: [
+    new ESlintPlugin({
+      extensions: ['js', 'ts'],
+    }),
+  ],
 });
 
 export default config;

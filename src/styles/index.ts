@@ -1,18 +1,18 @@
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
 import Fill from 'ol/style/Fill';
-import Text from 'ol/style/Text';
-import RenderFeature from 'ol/render/Feature';
+import { FeatureLike } from 'ol/Feature';
 
-import roadStyle from './roadStyle';
-import railroadStyle from './railroadStyle';
+import roadStyle from './road';
+import railwayStyle from './railway';
+import labelStyle from './label';
 
-export default function vtStyle(feature: RenderFeature, resolution: number) {
+export default function vtStyle(feature: FeatureLike, resolution: number) {
   const properties = feature.getProperties();
   if (properties.layer === 'road') {
     return roadStyle(feature, resolution);
   } else if (properties.layer === 'railway') {
-    return railroadStyle(feature, resolution);
+    return railwayStyle(feature, resolution);
   } else if (properties.layer === 'coastline') {
     return new Style({
       stroke: new Stroke({
@@ -20,13 +20,7 @@ export default function vtStyle(feature: RenderFeature, resolution: number) {
       }),
     });
   } else if (properties.layer === 'label') {
-    return new Style({
-      text: new Text({
-        text: properties.knj,
-        fill: new Fill({ color: '#777' }),
-        stroke: new Stroke({ color: '#fff', width: 2 }),
-      }),
-    });
+    return labelStyle(feature);
   } else if (properties.layer === 'contour') {
     return new Style({
       stroke: new Stroke({
