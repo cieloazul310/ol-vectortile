@@ -1,8 +1,8 @@
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
-import { FeatureLike } from 'ol/Feature';
+import RenderFeature from 'ol/render/Feature';
 
-export default function roadStyle(feature: FeatureLike, resolution: number) {
+export default function roadStyle(feature: RenderFeature, resolution: number) {
   const { rnkWidth, rdCtg } = feature.getProperties();
   const width =
     resolution > 50

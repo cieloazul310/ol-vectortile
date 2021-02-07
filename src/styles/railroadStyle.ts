@@ -1,12 +1,12 @@
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
-import { FeatureLike } from 'ol/Feature';
+import RenderFeature from 'ol/render/Feature';
 
 export default function railroadStyle(
-  feature: FeatureLike,
+  feature: RenderFeature,
   resolution: number
 ) {
-  const { snglDbl, rtCode10 } = feature.getProperties();
+  const { railState, snglDbl, rtCode10 } = feature.getProperties();
   if (snglDbl === 0) return null;
   if (snglDbl === 4) {
     return new Style({
