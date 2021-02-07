@@ -1,7 +1,7 @@
-import * as merge from 'webpack-merge';
+import WebpackMerge from 'webpack-merge';
 import common from './webpack.common';
 
-const config = merge(common, {
+const config = WebpackMerge(common, {
   mode: 'production',
   devtool: 'source-map',
 });
