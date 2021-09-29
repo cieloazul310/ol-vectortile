@@ -3,7 +3,9 @@ import Stroke from 'ol/style/Stroke';
 import { FeatureLike } from 'ol/Feature';
 
 export default function roadStyle(feature: FeatureLike, resolution: number) {
-  const { rnkWidth, rdCtg } = feature.getProperties();
+  const { rnkWidth, rdCtg, ftCode } = feature.getProperties();
+  if (resolution < 1.19 && ftCode > 2700) return null;
+
   const width =
     resolution > 50
       ? 1
@@ -19,7 +21,9 @@ export default function roadStyle(feature: FeatureLike, resolution: number) {
       ? 3
       : 0;
   const color =
-    rdCtg === 0
+    resolution < 1.19
+      ? '#ccc'
+      : rdCtg === 0
       ? '#bbb'
       : rdCtg === 1
       ? '#ccc'
