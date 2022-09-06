@@ -7,33 +7,46 @@
     "build": "webpack --config webpack.prod.ts",
     "watch": "webpack --watch webpack --config webpack.dev.ts",
     "start": "webpack serve --open --config webpack.dev.ts",
-    "lint": "eslint --ignore-path .eslintignore . --ext .ts,.tsx,.js,.jsx --fix",
+    "lint": "eslint src/ --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --parser typescript --write \"src/**/*.ts*\"",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "ol": "^6.14.1"
+    "ol": "^7.1.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.7.15",
     "@types/webpack-dev-server": "^4.7.2",
     "@types/webpack-merge": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "css-loader": "^6.7.1",
-    "eslint": "^8.12.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-webpack-plugin": "^3.1.1",
-    "gh-pages": "^3.2.3",
-    "prettier": "^2.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^3.2.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
-    "ts-loader": "^9.2.8",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4",
+    "ts-loader": "^9.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1",
     "webpack-merge": "^5.8.0"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --parser typescript --write"
+    ],
+    "./webpack.*.ts": [
+      "eslint --fix",
+      "prettier --parser typescript --write"
+    ]
   }
 }

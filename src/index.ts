@@ -1,11 +1,10 @@
+import './style.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import { fromLonLat } from 'ol/proj';
 import vt from './layers/vt';
 
 import { parseHash, setPermalink, setPopstate } from './utils/handleHash';
-
-import 'ol/ol.css';
 
 const { zoom, center, rotation } = parseHash(window);
 

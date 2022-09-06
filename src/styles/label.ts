@@ -2,7 +2,7 @@ import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
 import Stroke from 'ol/style/Stroke';
 import Text from 'ol/style/Text';
-import { FeatureLike } from 'ol/Feature';
+import type { FeatureLike } from 'ol/Feature';
 
 function textAlign(align: string): CanvasTextAlign {
   if (align === 'L') return 'left';
