@@ -1,7 +1,7 @@
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
 import Fill from 'ol/style/Fill';
-import { FeatureLike } from 'ol/Feature';
+import type { FeatureLike } from 'ol/Feature';
 
 import roadStyle from './road';
 import railwayStyle from './railway';

@@ -1,7 +1,3 @@
-src/layers/population.ts
-src/styles/example2Style.ts
-src/styles/populationStyle.ts
-
 # Logs
 logs
 *.log

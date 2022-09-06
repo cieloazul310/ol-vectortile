@@ -43,6 +43,10 @@
     "./src/**/*.{js,ts}": [
       "eslint --fix",
       "prettier --parser typescript --write"
+    ],
+    "./webpack.*.ts": [
+      "eslint --fix",
+      "prettier --parser typescript --write"
     ]
   }
 }

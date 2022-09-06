@@ -1,6 +1,6 @@
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
-import { FeatureLike } from 'ol/Feature';
+import type { FeatureLike } from 'ol/Feature';
 
 export default function roadStyle(feature: FeatureLike, resolution: number) {
   const { rnkWidth, rdCtg, ftCode } = feature.getProperties();
