@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-          cache: yarn
+          cache: npm
       
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm ci
 
       - name: Build project
-        run: yarn run build
+        run: npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
