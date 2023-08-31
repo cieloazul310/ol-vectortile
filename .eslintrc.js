@@ -15,8 +15,8 @@ module.exports = {
     {
       files: ["src/styles/**/*.ts"],
       rules: {
-        '@typescript-eslint/naming-convention': 'warn',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        "@typescript-eslint/naming-convention": "warn",
+        "@typescript-eslint/no-unused-vars": "warn",
       },
     },
   ],
