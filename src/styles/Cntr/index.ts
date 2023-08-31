@@ -6,10 +6,7 @@ import type {
   ContourCode,
 } from "@cieloazul310/ol-gsi-vt-style-utils";
 
-export default function cntrStyle(
-  feature: FeatureLike,
-  resolution: number,
-) {
+export default function cntrStyle(feature: FeatureLike, resolution: number) {
   const { vt_code, vt_alti } =
     feature.getProperties() as GsiOptVTFeatureProperties<
       Extract<ContourCode, 7351 | 7352 | 7353>,

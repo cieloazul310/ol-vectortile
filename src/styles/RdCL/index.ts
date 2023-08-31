@@ -34,10 +34,7 @@ function roadZIndex(rdCtg: number) {
   return 1;
 }
 
-export default function roadStyle(
-  feature: FeatureLike,
-  resolution: number,
-) {
+export default function roadStyle(feature: FeatureLike, resolution: number) {
   const { vt_code, vt_lvorder, vt_rdctg, vt_rnkwidth, vt_width, vt_motorway } =
     feature.getProperties() as GsiOptVtRdCLFeatureProperties;
 

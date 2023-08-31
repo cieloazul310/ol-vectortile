@@ -1,7 +1,7 @@
-import VectorTileLayer from 'ol/layer/VectorTile';
-import VectorTileSource from 'ol/source/VectorTile';
-import MVTFormat from 'ol/format/MVT';
-import vtstyle from '../styles';
+import VectorTileLayer from "ol/layer/VectorTile";
+import VectorTileSource from "ol/source/VectorTile";
+import MVTFormat from "ol/format/MVT";
+import vtstyle from "../styles";
 
 const vt = new VectorTileLayer({
   source: new VectorTileSource({

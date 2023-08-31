@@ -31,13 +31,13 @@ export default function annoStyle(feature: FeatureLike, resolution: number) {
   if ([2901, 2903, 2904].includes(vt_code)) return new Style();
 
   return new Style({
-      text: new Text({
-        text: vt_text,
-        font: "bold small sans-serif",
-        fill: new Fill({ color: "#777" }),
-        stroke: new Stroke({ color: "#fff", width: 2 }),
-        ...position,
-      }),
-      zIndex: 10,
-    });
+    text: new Text({
+      text: vt_text,
+      font: "bold small sans-serif",
+      fill: new Fill({ color: "#777" }),
+      stroke: new Stroke({ color: "#fff", width: 2 }),
+      ...position,
+    }),
+    zIndex: 10,
+  });
 }

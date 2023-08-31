@@ -1,5 +1,5 @@
-import Map from 'ol/Map';
-import { fromLonLat, toLonLat } from 'ol/proj';
+import Map from "ol/Map";
+import { fromLonLat, toLonLat } from "ol/proj";
 
 export function parseHash(window: Window): {
   zoom: number | null;
@@ -24,21 +24,15 @@ export function parseHash(window: Window): {
 }
 
 export function setPermalink(map: Map) {
-  map.on('moveend', () => {
+  map.on("moveend", () => {
     const view = map.getView();
     const zoom = view.getZoom();
     const center = toLonLat(view.getCenter());
     const rotation = view.getRotation();
-    const hash =
-      `#map=${ 
-      zoom.toFixed(2) 
-      }/${ 
-      center[0].toFixed(4) 
-      }/${ 
-      center[1].toFixed(4) 
-      }/${ 
-      rotation.toFixed(4)}`;
+    const hash = `#map=${zoom.toFixed(2)}/${center[0].toFixed(
+      4,
+    )}/${center[1].toFixed(4)}/${rotation.toFixed(4)}`;
     const state = { zoom, center, rotation };
-    window.history.pushState(state, 'map', hash);
+    window.history.pushState(state, "map", hash);
   });
 }
