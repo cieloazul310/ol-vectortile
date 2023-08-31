@@ -3,7 +3,7 @@ import View from 'ol/View';
 import { fromLonLat } from 'ol/proj';
 import { Attribution, ScaleLine, defaults as defaultControl } from 'ol/control';
 import vt from './layers/vt';
-import { parseHash, setPermalink, setPopstate } from './utils/handleHash';
+import { parseHash, setPermalink } from './utils/handleHash';
 import './style.css';
 
 const { zoom, center, rotation } = parseHash(window);
@@ -27,4 +27,3 @@ const map = new Map({
 });
 
 setPermalink(map);
-setPopstate(map, window);
