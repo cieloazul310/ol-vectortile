@@ -2,7 +2,7 @@ import Map from "ol/Map";
 import View from "ol/View";
 import { fromLonLat } from "ol/proj";
 import { Attribution, ScaleLine, defaults as defaultControl } from "ol/control";
-import vt from "./layers/vt";
+import vtLayer from "./layers/vt";
 import { parseHash, setPermalink } from "./utils/handleHash";
 import "./style.css";
 
@@ -15,7 +15,7 @@ const map = new Map({
     zoom: zoom || 12,
     rotation: rotation || 0,
   }),
-  layers: [vt],
+  layers: [vtLayer],
   controls: defaultControl({
     attribution: false,
   }).extend([
