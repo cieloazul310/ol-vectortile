@@ -36,3 +36,14 @@ export function setPermalink(map: Map) {
     window.history.pushState(state, "map", hash);
   });
 }
+
+export function setPopstate(map: Map, window: Window) {
+  window.addEventListener("popstate", (event) => {
+    if (event.state === null) {
+      return;
+    }
+    map.getView().setCenter(fromLonLat(event.state.center));
+    map.getView().setZoom(event.state.zoom);
+    map.getView().setRotation(event.state.rotation);
+  });
+}
