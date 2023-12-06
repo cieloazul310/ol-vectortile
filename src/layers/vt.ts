@@ -1,31 +1,27 @@
 import VectorTileLayer from "ol/layer/VectorTile";
-import VectorTileSource from "ol/source/VectorTile";
-import MVTFormat from "ol/format/MVT";
+import { PMTilesVectorSource } from "ol-pmtiles";
 import vtstyle from "../styles";
 
 const vt = new VectorTileLayer({
-  source: new VectorTileSource({
-    format: new MVTFormat({
-      layers: [
-        "AdmBdry",
-        "Anno",
-        "BldA",
-        "Cntr",
-        "Cstline",
-        "RailCL",
-        "RdCL",
-        "WA",
-        "WRltLine",
-      ],
-    }),
-    url: "https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap-v1/{z}/{x}/{y}.pbf",
-    maxZoom: 16,
+  source: new PMTilesVectorSource({
+    url: "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
     minZoom: 4,
+    maxZoom: 16,
     attributions:
       '<a href="https://github.com/gsi-cyberjapan/gsimaps-vector-experiment" target="_blank" rel=”noopener noreferrer”>国土地理院</a>',
   }),
   declutter: true,
-  style: vtstyle,
+  style: vtstyle([
+    "AdmBdry",
+    "Anno",
+    "BldA",
+    "Cntr",
+    "Cstline",
+    "RailCL",
+    "RdCL",
+    "WA",
+    "WRltLine",
+  ]),
 });
 
 export default vt;

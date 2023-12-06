@@ -1,6 +1,7 @@
 {
   "name": "ol-vectortile",
   "version": "1.0.0",
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "start": "vite",
@@ -13,22 +14,23 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "@cieloazul310/ol-gsi-vt-style-utils": "^1.1.1",
-    "ol": "^8.0.0"
+    "@cieloazul310/ol-gsi-vt-style-utils": "^1.2.0",
+    "ol": "^8.2.0",
+    "ol-pmtiles": "^0.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.5.8",
-    "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "@typescript-eslint/parser": "^6.5.0",
-    "eslint": "^8.48.0",
+    "@types/node": "^20.10.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2",
-    "vite": "4.4.12"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2",
+    "vite": "5.0.5"
   },
   "lint-staged": {
     "./src/**/*.{js,ts}": [
