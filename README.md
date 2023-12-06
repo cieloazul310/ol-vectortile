@@ -1,9 +1,9 @@
 # 国土地理院ベクトルタイル + OpenLayers + TypeScript Example
 
-[国土地理院が提供実験を開始したバイナリベクトルタイル](https://github.com/gsi-cyberjapan/gsimaps-vector-experiment "地理院地図Vector（仮称）提供実験のソース")を OpenLayers で表示したプロジェクトの作成例です。
+[国土地理院が提供実験を開始したバイナリベクトルタイル](https://github.com/gsi-cyberjapan/optimal_bvmap "最適化ベクトルタイル試験公開")を OpenLayers で表示したプロジェクトの作成例です。
 
-地理院地図Vector（仮称）提供実験のソース  
-<https://github.com/gsi-cyberjapan/gsimaps-vector-experiment>
+最適化ベクトルタイル試験公開  
+<https://github.com/gsi-cyberjapan/optimal_bvmap>
 
 ## デモ
 
@@ -12,19 +12,34 @@
 ## 開発
 
 ```shell
-$ git clone git@github.com:cieloazul310/ol-vectortile.git --depth=1
+$ git clone git@github.com:cieloazul310/ol-vectortile.git
 $ cd ol-vectortile
-$ yarn install
+$ npm install
 
 # develop
-$ yarn run start
+$ npm run start
 
 # build
-$ yarn run build
+$ npm run build
 
 # format with prettier
-$ yarn run format
+$ npm run format
 
 # deploy to gh-pages
-$ yarn run deploy
+$ npm run deploy
 ```
+
+## Deploy configure
+
+### GitHub Pages
+
+1. Settings > Code and automation > Actions > General  
+    Workflow permissions: **Read and write permissions**
+2. Settings > Code and automation > Pages  
+    Build and deployment Source: **GitHub Actions**
+
+### Netlify
+
+1. Site configuration > Build & Deploy > Continuous deployment  
+    Build settings Build command:  
+    `npm run build -- --site $URL`
