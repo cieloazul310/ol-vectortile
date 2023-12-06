@@ -8,5 +8,6 @@
     "target": "esnext",
     "jsx": "react",
     "allowJs": true
-  }
+  },
+  "exclude": ["dist"]
 }
